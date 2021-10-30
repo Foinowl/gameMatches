@@ -1,6 +1,6 @@
 package com.company.repository;
 
-public class SimpleMatchesRepository implements MatchesRepository{
+public class SimpleMatchesRepository implements MatchesRepository {
     private int matches = 20;
 
     public SimpleMatchesRepository() {

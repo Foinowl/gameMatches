@@ -5,7 +5,7 @@ import com.company.repository.SimpleMatchesRepository;
 import com.company.service.MatchesService;
 
 public class SimpleMatchesService implements MatchesService {
-    private MatchesRepository matchesRepository = new SimpleMatchesRepository();
+    private final MatchesRepository matchesRepository = new SimpleMatchesRepository();
 
     public SimpleMatchesService() {
     }

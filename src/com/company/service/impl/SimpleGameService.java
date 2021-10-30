@@ -6,14 +6,14 @@ import com.company.entity.Player;
 import com.company.service.*;
 
 public class SimpleGameService implements GameService {
-    private ConsoleService consoleService = new SimpleConsoleService();
-    private MatchesService matchesService = new SimpleMatchesService();
-    private PlayerService computerService = new ComputerService();
-    private PlayerService humanService = new HumanService();
-    private CurrentPlayerService currentPlayerService = new SimpleCurrentPlayerService();
+    private final ConsoleService consoleService = new SimpleConsoleService();
+    private final MatchesService matchesService = new SimpleMatchesService();
+    private final PlayerService computerService = new ComputerService();
+    private final PlayerService humanService = new HumanService();
+    private final CurrentPlayerService currentPlayerService = new SimpleCurrentPlayerService();
 
-    private Player computer = new Computer();
-    private Player human = new Human();
+    private final Player computer = new Computer();
+    private final Player human = new Human();
 
     public SimpleGameService() {
     }

@@ -9,7 +9,7 @@ public class SimpleConsoleService implements ConsoleService {
 
     @Override
     public void printNumberFromUserMove(int countPulledMatches) {
-        System.out.println(" - Ход игрока. Введите количество спичек: " + countPulledMatches);
+        System.out.println(" - Ход игрока. Введите количество спичек: " + countPulledMatches + " .");
     }
 
     @Override
@@ -19,12 +19,12 @@ public class SimpleConsoleService implements ConsoleService {
 
     @Override
     public void printPlayerWinner(Player player) {
-        System.out.println("Для игрока осталась последняя спичка. " + player + " проиграл");
+        System.out.println("Для игрока осталась последняя спичка. " + player + " проиграл.");
     }
 
     @Override
     public void printErrorInfo() {
-        System.out.println("Некорректное количество спичек");
+        System.out.println("Некорректное количество спичек. ");
     }
 
     @Override
@@ -39,7 +39,9 @@ public class SimpleConsoleService implements ConsoleService {
 
     @Override
     public void printCountMatches(int matchesLeft) {
-        System.out.println("На столе осталось " + matchesLeft + " " + choosePluralMerge(matchesLeft, "спичка", "спички", "спичек"));
+        System.out.println("На столе осталось "
+                + matchesLeft + " "
+                + choosePluralMerge(matchesLeft, "спичка", "спички", "спичек"));
     }
 
     public int getNumberFromUserMove() {

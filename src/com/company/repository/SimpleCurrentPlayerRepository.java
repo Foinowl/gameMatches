@@ -2,7 +2,7 @@ package com.company.repository;
 
 import com.company.entity.Player;
 
-public class SimpleCurrentPlayerRepository implements CurrentPlayerRepository{
+public class SimpleCurrentPlayerRepository implements CurrentPlayerRepository {
     private Player currentPlayer;
     private Player previousPlayer;
 

@@ -6,7 +6,7 @@ import com.company.repository.SimpleCurrentPlayerRepository;
 import com.company.service.CurrentPlayerService;
 
 public class SimpleCurrentPlayerService implements CurrentPlayerService {
-    private CurrentPlayerRepository currentPlayerRepository = new SimpleCurrentPlayerRepository();
+    private final CurrentPlayerRepository currentPlayerRepository = new SimpleCurrentPlayerRepository();
 
     @Override
     public void setCurrentPlayer(Player currentPlayer) {
