@@ -4,7 +4,7 @@ import com.company.entity.Player;
 
 public interface ConsoleService {
 
-    int printNumberFromUserMove();
+    void printNumberFromUserMove(int countPulledMatches);
 
     void printNumberFromComputerMove(int pulledMatches);
 
@@ -17,4 +17,6 @@ public interface ConsoleService {
     void printEndGame();
 
     void printCountMatches(int matchesLeft);
+
+    int getNumberFromUserMove();
 }

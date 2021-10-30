@@ -8,11 +8,8 @@ import java.util.Scanner;
 public class SimpleConsoleService implements ConsoleService {
 
     @Override
-    public int printNumberFromUserMove() {
-        int countPulledMatches = getNumberFromUserMove();
-        System.out.print(" - Ход игрока. Введите количество спичек: ");
-        System.out.println(countPulledMatches);
-        return countPulledMatches;
+    public void printNumberFromUserMove(int countPulledMatches) {
+        System.out.println(" - Ход игрока. Введите количество спичек: " + countPulledMatches);
     }
 
     @Override
@@ -32,20 +29,20 @@ public class SimpleConsoleService implements ConsoleService {
 
     @Override
     public void printStartGame() {
-        System.out.print("Начало игры.");
+        System.out.print("Начало игры. ");
     }
 
     @Override
     public void printEndGame() {
-        System.out.print("Конец игры.");
+        System.out.print("Конец игры. ");
     }
 
     @Override
     public void printCountMatches(int matchesLeft) {
-        System.out.println("На столе осталось" + matchesLeft + "спичек");
+        System.out.println("На столе осталось " + matchesLeft + " спичек");
     }
 
-    private int getNumberFromUserMove() {
+    public int getNumberFromUserMove() {
         Scanner scanner = new Scanner(System.in);
 
         return scanner.nextInt();
