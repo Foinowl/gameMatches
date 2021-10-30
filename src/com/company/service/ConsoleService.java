@@ -4,7 +4,7 @@ import com.company.entity.Player;
 
 public interface ConsoleService {
 
-    void printNumberFromUserMove();
+    int printNumberFromUserMove();
 
     void printNumberFromComputerMove(int pulledMatches);
 

@@ -8,8 +8,10 @@ import java.util.Scanner;
 public class SimpleConsoleService implements ConsoleService {
 
     @Override
-    public void printNumberFromUserMove() {
-        System.out.println(" - Ход игрока. Введите количество спичек: " + getNumberFromUserMove());
+    public int printNumberFromUserMove() {
+        int countPulledMatches = getNumberFromUserMove();
+        System.out.println(" - Ход игрока. Введите количество спичек: " + countPulledMatches);
+        return countPulledMatches;
     }
 
     @Override
