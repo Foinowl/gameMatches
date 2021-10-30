@@ -18,9 +18,4 @@ public class SimpleMatchesRepository implements MatchesRepository{
     public boolean isLastMatch() {
         return getMatches() == 1;
     }
-
-    @Override
-    public boolean isEmpty() {
-        return getMatches() == 0;
-    }
 }

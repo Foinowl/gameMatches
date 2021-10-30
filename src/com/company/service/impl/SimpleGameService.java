@@ -7,11 +7,12 @@ import com.company.repository.MatchesRepository;
 import com.company.repository.SimpleMatchesRepository;
 import com.company.service.ConsoleService;
 import com.company.service.GameService;
+import com.company.service.MatchesService;
 import com.company.service.PlayerService;
 
 public class SimpleGameService implements GameService {
     private ConsoleService consoleService = new SimpleConsoleService();
-    private MatchesRepository matchesRepository = new SimpleMatchesRepository();
+    private MatchesService matchesService = new SimpleMatchesService();
     private PlayerService computerService = new ComputerService();
     private PlayerService humanService = new HumanService();
 
@@ -25,9 +26,10 @@ public class SimpleGameService implements GameService {
     public void startGame() {
         consoleService.printStartGame();
 
-        while (!matchesRepository.isEmpty() || !matchesRepository.isLastMatch()) {
+        while (true) {
 
             computerMove();
+            if (matchesService.isLastMatch()) break;
             humanMove();
         }
         consoleService.printEndGame();
@@ -35,13 +37,13 @@ public class SimpleGameService implements GameService {
 
     @Override
     public void computerMove() {
-        consoleService.printCountMatches(matchesRepository.getMatches());
-        computerService.movePlayer(consoleService, matchesRepository);
+        consoleService.printCountMatches(matchesService.getMatches());
+        computerService.movePlayer(consoleService, matchesService);
     }
 
     @Override
     public void humanMove() {
-        consoleService.printCountMatches(matchesRepository.getMatches());
-        humanService.movePlayer(consoleService, matchesRepository);
+        consoleService.printCountMatches(matchesService.getMatches());
+        humanService.movePlayer(consoleService, matchesService);
     }
 }

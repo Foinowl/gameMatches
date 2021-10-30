@@ -1,8 +1,6 @@
 package com.company.service;
 
-import com.company.repository.MatchesRepository;
-
 public interface PlayerService {
 
-    void movePlayer(ConsoleService consoleService ,MatchesRepository matchesRepository);
+    void movePlayer(ConsoleService consoleService ,MatchesService matchesService);
 }

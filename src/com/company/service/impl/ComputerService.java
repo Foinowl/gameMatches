@@ -2,18 +2,19 @@ package com.company.service.impl;
 
 import com.company.repository.MatchesRepository;
 import com.company.service.ConsoleService;
+import com.company.service.MatchesService;
 import com.company.service.PlayerService;
 
 public class ComputerService implements PlayerService {
     @Override
-    public void movePlayer(ConsoleService consoleService, MatchesRepository matchesRepository) {
-        int matchesLeft = matchesRepository.getMatches();
+    public void movePlayer(ConsoleService consoleService, MatchesService matchesService) {
+        int matchesLeft = matchesService.getMatches();
 
         while (matchesLeft % 4 != 1) {
             matchesLeft--;
         }
-        int pulledMatches = matchesRepository.getMatches() - matchesLeft;
+        int pulledMatches = matchesService.getMatches() - matchesLeft;
         consoleService.printNumberFromComputerMove(pulledMatches);
-        matchesRepository.setMatches(matchesRepository.getMatches() - pulledMatches);
+        matchesService.setMatches(pulledMatches);
     }
 }

@@ -7,6 +7,4 @@ public interface MatchesRepository {
     void setMatches(int matches);
 
     boolean isLastMatch();
-
-    boolean isEmpty();
 }

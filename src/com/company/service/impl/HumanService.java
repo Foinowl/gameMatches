@@ -2,18 +2,19 @@ package com.company.service.impl;
 
 import com.company.repository.MatchesRepository;
 import com.company.service.ConsoleService;
+import com.company.service.MatchesService;
 import com.company.service.PlayerService;
 
 public class HumanService implements PlayerService {
     @Override
-    public void movePlayer(ConsoleService consoleService, MatchesRepository matchesRepository) {
-        int matchesLeft = consoleService.getNumberFromUserMove();
-        while (!isValidMove(matchesLeft)) {
+    public void movePlayer(ConsoleService consoleService, MatchesService matchesService) {
+        int pulledMatches = consoleService.getNumberFromUserMove();
+        while (!isValidMove(pulledMatches)) {
             consoleService.printErrorInfo();
-            matchesLeft = consoleService.getNumberFromUserMove();
+            pulledMatches = consoleService.getNumberFromUserMove();
         }
-        consoleService.printNumberFromUserMove(matchesLeft);
-        matchesRepository.setMatches(matchesRepository.getMatches() - matchesLeft);
+        consoleService.printNumberFromUserMove(pulledMatches);
+        matchesService.setMatches(pulledMatches);
     }
 
     private boolean isValidMove(int matchesLeft) {
