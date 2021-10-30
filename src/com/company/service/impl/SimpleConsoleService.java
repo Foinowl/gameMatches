@@ -10,7 +10,8 @@ public class SimpleConsoleService implements ConsoleService {
     @Override
     public int printNumberFromUserMove() {
         int countPulledMatches = getNumberFromUserMove();
-        System.out.println(" - Ход игрока. Введите количество спичек: " + countPulledMatches);
+        System.out.print(" - Ход игрока. Введите количество спичек: ");
+        System.out.println(countPulledMatches);
         return countPulledMatches;
     }
 
@@ -38,7 +39,6 @@ public class SimpleConsoleService implements ConsoleService {
     public void printEndGame() {
         System.out.print("Конец игры.");
     }
-
 
     @Override
     public void printCountMatches(int matchesLeft) {

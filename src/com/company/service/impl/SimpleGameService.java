@@ -28,6 +28,6 @@ public class SimpleGameService implements GameService {
 
     @Override
     public void humanMove() {
-
+        int countMatches = consoleService.printNumberFromUserMove();
     }
 }
